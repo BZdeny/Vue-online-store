@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous"> 
+    <link rel="stylesheet" href="styles.css">
+    <title>Online Store</title>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1 v-text="sitename"></h1>
+        </header>
+        <main>
+            <div class="row-product">
+                <div class="col">
+                    <figure>
+                        <img v-bind:src="product.image">
+                    </figure> 
+                </div>
+                <div class="col col-expand">
+                    <h1 v-text="product.title"></h1>
+                    <p v-html="product.description"></p>
+                    <p class="price">{{ product.price | formatPrice }}</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
