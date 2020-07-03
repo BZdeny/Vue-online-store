@@ -3,7 +3,9 @@
     flex-direction: row;
     justify-content: center;
 }
-body {
+header {
+    margin-left: 10px;
+    background-color: aquamarine;
 }
 p {
     font-size: 22px;

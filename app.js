@@ -5,11 +5,12 @@ const webstore = new Vue({
         product: {
             id: 1,
             title: 'ProPlan Sterilised, 3kg',
-            description: "А 25 pound bag of <em>irrestible</em>,"+
-                          "organic goodness for your cat.",
+            description: "А 3 kg bag of <em>irrestible</em>,"+
+                          " organic goodness for your cat.",
             price: 2000,
             image: 'img/PP-3kg.jpg'
-        }
+        },
+        cart: []
     },
     filters: {
         formatPrice: function(price) {
@@ -27,6 +28,11 @@ const webstore = new Vue({
             } else {
                 return '$' + (price / 100).toFixed(2)
             }
+        }
+    },
+    methods: {
+        addToCart: function() {
+            this.cart.push(this.product.id)
         }
     }
 })
