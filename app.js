@@ -12,7 +12,11 @@ const webstore = new Vue({
             availableInventory: 5
         },
         cart: [],
-        showProduct: true
+        showProduct: true,
+        order: {
+            firstName: '',
+            lastName: ''
+        }
     },
     filters: {
         formatPrice: function(price) {

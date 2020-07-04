@@ -43,14 +43,26 @@
         </main>
 
         <main>
-            <div>
-                <div v-if="showProduct">
-                    ...
+            <div class="modal-order">
+                <div v-if ="showProduct">
                 </div>
+
                 <div v-else>
+                    <strong>First Name</strong>
+                    <input v-model="order.firstName">
+                    <strong>Last Name</strong>
+                    <input v-model="order.lastName">
+
+                    <div>
+                        <pre>
+                            First Name: {{order.firstName}}
+                            Last Name: {{order.lastName}}
+                        </pre>
+                    </div>
                 </div>
             </div>
         </main>
+
 <script src="app.js"></script>
 </body>
 </html>
