@@ -16,3 +16,29 @@ p {
 img {
     max-height: 300px;
 }
+.bar-right {
+    text-align: right;
+}
+button {
+    width: 120px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+}
+.addButton, .addButtonDisabled, .checkout {
+    color: #ffffff;
+    background-color: rgb(60, 248, 160);
+    outline: none;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+.checkout {
+    background-color: rgb(60, 248, 91);
+}
+.addButtonDisabled {
+    background-color: rgb(99, 145, 123);
+}
+.addButton:hover, .checkout:hover {
+    opacity: 0.5;
+}

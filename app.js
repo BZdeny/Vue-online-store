@@ -8,9 +8,11 @@ const webstore = new Vue({
             description: "А 3 kg bag of <em>irrestible</em>,"+
                           " organic goodness for your cat.",
             price: 2000,
-            image: 'img/PP-3kg.jpg'
+            image: 'img/PP-3kg.jpg',
+            availableInventory: 5
         },
-        cart: []
+        cart: [],
+        showProduct: true
     },
     filters: {
         formatPrice: function(price) {
@@ -33,6 +35,17 @@ const webstore = new Vue({
     methods: {
         addToCart: function() {
             this.cart.push(this.product.id)
+        },
+        showCheckout() {
+            this.showProduct = this.showProduct ? false : true
+        }
+    },
+    computed: {
+        cartItemCount: function() {
+            return this.cart.length || ''
+        },
+        canAddToCart: function() {
+            return this.product.availableInventory > this.cartItemCount
         }
     }
 })
