@@ -10,7 +10,7 @@
     <title>Online Store</title>
 </head>
 <body>
-    <div id="app">
+    <div id="app" class="head">
         <header>
             <h1 v-text="sitename"></h1>
             <div class="cart bar-right">
@@ -44,43 +44,54 @@
                     </div>
                 </div>
                 <div v-else>
+                    <h2>Enter Your Information</h1>
                     <div class="order">
-                        <div class="firstN">
-                            <strong>First Name:</strong>
-                            <br>
-                            <input v-model="order.firstName">
-                        </div>
-                        <div class="lastN">
-                            <strong>Last Name:</strong>
-                            <br>
-                            <input v-model="order.lastName">
-                        </div>
-                        <div class="address">
-                            <strong>Address:</strong>
-                            <br>
-                            <input v-model=order.address>
-                        </div>
-                        <div class="city">
-                            <strong>City:</strong>
-                            <br>
-                            <input v-model=order.city>
-                        </div>
-                        <div class="state">
-                            <strong>State:</strong>
-                            <br>
-                            <select v-model="order.state">
-                                <option disabled value="">State</option>
-                                <option>AL</option>
-                                <option>AR</option>
-                                <option>CA</option>
-                                <option>NV</option>
-                            </select>
-                        </div>
-                        <div class="zip">
-                            <strong>ZIP / Postal Code:</strong>
-                            <br>
-                            <input v-model=order.zip>
-                        </div>
+                            <div class="firstN">
+                                <strong>First Name:</strong>
+                                <input v-model="order.firstName"
+                                class="form-control"
+                                maxlength="70">
+                            </div>
+                            <div class="lastN">
+                                <strong>Last Name:</strong>
+                                <input v-model="order.lastName"
+                                class="form-control"
+                                maxlength="70">
+                            </div>
+                            <div class="address">
+                                <div class="address">
+                                    <strong>Address:</strong>
+                                    <input v-model="order.address"
+                                    class="form-control"
+                                    id="address"
+                                    maxlength="70">
+                                </div>
+                           </div>
+                            <div class="city">
+                                <strong>City:</strong>
+                                <input v-model="order.city"
+                                class="form-control"
+                                id="city"
+                                maxlength="70">
+                            </div>
+                            <div class="state">
+                                <strong>State:</strong>
+                                <select v-model="order.state"
+                                class="form-control"
+                                id="select">
+                                    <option disabled value="">State:</option>
+                                    <option>AL</option>
+                                    <option>AR</option>
+                                    <option>CA</option>
+                                    <option>NV</option>
+                                </select>
+                            </div>
+                            <div class="zip">
+                                <strong>ZIP / Postal Code:</strong>
+                                <input v-model=order.zip
+                                class="form-control"
+                                maxlength="70">
+                            </div>
                         <div class="check">
                             <pre>
                                 First Name: {{order.firstName}}
