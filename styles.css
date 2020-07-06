@@ -1,4 +1,4 @@
-.row-product {
+.product {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -42,6 +42,11 @@ button {
 .addButton:hover, .checkout:hover {
     opacity: 0.5;
 }
-.modal-order {
-    
+.order {
+    justify-content: center;
+    display: grid;
+    grid-template-columns: 500px 500px
+}
+.check {
+    width: 1000px;
 }

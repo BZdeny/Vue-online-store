@@ -22,42 +22,75 @@
         </header>
         <main>
             <div class="row-product">
-                <div class="col">
-                    <figure>
-                        <img v-bind:src="product.image">
-                    </figure> 
-                </div>
-                <div class="col col-expand">
-                    <h1 v-text="product.title"></h1>
-                    <p v-html="product.description"></p>
-                    <p class="price">{{ product.price | formatPrice }}</p>
-                    <button class="addButton"
-                      v-on:click="addToCart"
-                      v-if="canAddToCart"
-                    ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
-                    <button disabled class="addButtonDisabled"
-                    v-else
-                    ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
-                </div>
-            </div>
-        </main>
-
-        <main>
-            <div class="modal-order">
                 <div v-if ="showProduct">
+                    <div class="product">
+                        <div class="col">
+                            <figure>
+                                <img v-bind:src="product.image">
+                            </figure> 
+                        </div>
+                        <div class="col col-expand">
+                            <h1 v-text="product.title"></h1>
+                            <p v-html="product.description"></p>
+                            <p class="price">{{ product.price | formatPrice }}</p>
+                            <button class="addButton"
+                              v-on:click="addToCart"
+                              v-if="canAddToCart"
+                            ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+                            <button disabled class="addButtonDisabled"
+                            v-else
+                            ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+                        </div>
+                    </div>
                 </div>
-
                 <div v-else>
-                    <strong>First Name</strong>
-                    <input v-model="order.firstName">
-                    <strong>Last Name</strong>
-                    <input v-model="order.lastName">
-
-                    <div>
-                        <pre>
-                            First Name: {{order.firstName}}
-                            Last Name: {{order.lastName}}
-                        </pre>
+                    <div class="order">
+                        <div class="firstN">
+                            <strong>First Name:</strong>
+                            <br>
+                            <input v-model="order.firstName">
+                        </div>
+                        <div class="lastN">
+                            <strong>Last Name:</strong>
+                            <br>
+                            <input v-model="order.lastName">
+                        </div>
+                        <div class="address">
+                            <strong>Address:</strong>
+                            <br>
+                            <input v-model=order.address>
+                        </div>
+                        <div class="city">
+                            <strong>City:</strong>
+                            <br>
+                            <input v-model=order.city>
+                        </div>
+                        <div class="state">
+                            <strong>State:</strong>
+                            <br>
+                            <select v-model="order.state">
+                                <option disabled value="">State</option>
+                                <option>AL</option>
+                                <option>AR</option>
+                                <option>CA</option>
+                                <option>NV</option>
+                            </select>
+                        </div>
+                        <div class="zip">
+                            <strong>ZIP / Postal Code:</strong>
+                            <br>
+                            <input v-model=order.zip>
+                        </div>
+                        <div class="check">
+                            <pre>
+                                First Name: {{order.firstName}}
+                                Last Name: {{order.lastName}}
+                                Addrress: {{order.address}}
+                                City: {{order.city}}
+                                State: {{order.state}}
+                                ZIP / Postal Code: {{order.zip}}
+                            </pre>
+                        </div>
                     </div>
                 </div>
             </div>

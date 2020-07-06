@@ -15,7 +15,11 @@ const webstore = new Vue({
         showProduct: true,
         order: {
             firstName: '',
-            lastName: ''
+            lastName: '',
+            address: '',
+            city: '',
+            state: '',
+            zip: ''
         }
     },
     filters: {
