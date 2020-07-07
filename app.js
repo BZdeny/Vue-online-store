@@ -9,7 +9,7 @@ const webstore = new Vue({
                           " organic goodness for your cat.",
             price: 2000,
             image: 'img/PP-3kg.jpg',
-            availableInventory: 5
+            availableInventory: 10
         },
         cart: [],
         showProduct: true,
