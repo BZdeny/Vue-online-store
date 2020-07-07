@@ -4,7 +4,7 @@
     justify-content: center;
 }
 header {
-    background-color: aquamarine;
+    background-color: rgb(209, 255, 240);
     height: 5em;
     position: relative;
 }
@@ -64,6 +64,8 @@ button {
     "address address"
     "city city"
     "state zip"
+    "gift method"
+    "orderButton orderButton"
     "check check";
 }
 @media(max-width: 1000px) {
@@ -75,6 +77,9 @@ button {
         "city"
         "state"
         "zip"
+        "gift"
+        "method"
+        "orderButton"
         "check";
     }
 }
@@ -97,10 +102,19 @@ button {
     grid-area: zip;
 }
 .check {
-    grid-area: check
+    grid-area: check;
+}
+.gift {
+    grid-area: gift;
+}
+.method {
+    grid-area: method;
+}
+.orderButton {
+    grid-area: orderButton;
 }
 .form-control {
-    width: 500px;
+    width: 450px;
 }
 #address, #city {
     width: 100%;

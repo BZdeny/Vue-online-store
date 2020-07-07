@@ -19,7 +19,19 @@ const webstore = new Vue({
             address: '',
             city: '',
             state: '',
-            zip: ''
+            zip: '',
+            gift: "Send As A Gift",
+            sendGift: "Send As A Gift",
+            dontSendGift: "Do Not Send As A Gift",
+            method: "Home Address",
+            home: "Home Address",
+            business: "Business Address"
+        },
+        states: {
+            AL: "Alabama",
+            AR: "Arizona",
+            CA: "California",
+            NV: "Nevada"
         }
     },
     filters: {
@@ -46,6 +58,9 @@ const webstore = new Vue({
         },
         showCheckout() {
             this.showProduct = this.showProduct ? false : true
+        },
+        submitForm() {
+            alert("Submitted!")
         }
     },
     computed: {
