@@ -9,7 +9,8 @@ const webstore = new Vue({
                           " organic goodness for your cat.",
             price: 2000,
             image: 'img/PP-3kg.jpg',
-            availableInventory: 10
+            availableInventory: 10,
+            rating: 3
         },
         cart: [],
         showProduct: true,
@@ -61,6 +62,9 @@ const webstore = new Vue({
         },
         submitForm() {
             alert("Submitted!")
+        },
+        checkRating(n) {
+            return this.product.rating - n >= 0
         }
     },
     computed: {

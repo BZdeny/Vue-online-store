@@ -1,0 +1,34 @@
+
+{
+    "products":[
+        {
+            "id": 1,
+            "title": "ProPlan Sterilised, 3kg",
+            "description": "А 3 kg bag of <em>irrestible</em>,
+                           organic goodness for your cat.",
+            "price": 2000,
+            "image": "img/PP-3kg.jpg",
+            "availableInventory": 10,
+            "rating": 3
+        },
+        {
+            "id": 2,
+            "title": "Cat Toy",
+            "description": "Your cat can play with this toy
+                           for a very <strong>long</strong> time",
+            "price": 299,
+            "image": "img/mouse-toy.jpg",
+            "availableInventory": 14,
+            "rating": 4
+        },
+        {
+            "id": 3,
+            "title": "Hammock",
+            "description": "CAT SLEEPIN",
+            "price": 1300,
+            "image": "img/hammock.jpg",
+            "availableInventory": 14,
+            "rating": 5
+        }
+    ]
+}

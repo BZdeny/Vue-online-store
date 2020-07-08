@@ -125,3 +125,13 @@ button {
 pre {
     text-align: left;
 }
+.rating {
+    margin-left: 200px;
+    font-size: 24px;
+    display: inline-block;
+    position: relative;
+}
+.rating-active:before {
+    content: "\2605";
+    position: absolute;
+ }

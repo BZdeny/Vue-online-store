@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.16.2/axios.js"> </script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous"> 
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
@@ -40,6 +41,20 @@
                             <button disabled class="addButtonDisabled"
                             v-else
                             ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+                            <span class="inventory-message"
+                            v-if="product.availableInventory - cartItemCount ===0">All Out!
+                            </span>
+                            <span class="inventory-message"
+                            v-else-if="product.availableInventory - cartItemCount < 5">
+                            Only {{product.availableInventory - cartItemCount}} left!
+                            </span>
+                            <span class="inventory-message"
+                            v-else>Buy Now!
+                            </span>
+                            <div class="rating">
+                                <span v-bind:class="{'rating-active': checkRating(n)}"
+                                      v-for="n in 5">☆</span>
+                            </div>
                         </div>
                     </div>
                 </div>
