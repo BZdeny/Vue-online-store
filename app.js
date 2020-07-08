@@ -2,16 +2,7 @@ const webstore = new Vue({
     el: '#app',
     data:{
         sitename: 'Vue pet store',
-        product: {
-            id: 1,
-            title: 'ProPlan Sterilised, 3kg',
-            description: "А 3 kg bag of <em>irrestible</em>,"+
-                          " organic goodness for your cat.",
-            price: 2000,
-            image: 'img/PP-3kg.jpg',
-            availableInventory: 10,
-            rating: 3
-        },
+        products: [],
         cart: [],
         showProduct: true,
         order: {
@@ -53,9 +44,16 @@ const webstore = new Vue({
             }
         }
     },
+    created: function() {
+        axios.get('./products.json')
+        .then ((response) => {
+            this.products = response.data.products
+            console.log(this.products)
+        })
+    },
     methods: {
         addToCart: function() {
-            this.cart.push(this.product.id)
+            this.cart.push(aProduct.id)
         },
         showCheckout() {
             this.showProduct = this.showProduct ? false : true
@@ -63,16 +61,25 @@ const webstore = new Vue({
         submitForm() {
             alert("Submitted!")
         },
-        checkRating(n) {
-            return this.product.rating - n >= 0
+        checkRating(n, myProduct) {
+            return myProduct.rating - n >= 0
+        },
+        canAddToCart(aProduct) {
+            return aProduct.availableInventory > this.cartCount(aProduct.id)
+        },
+        cartCount(id) {
+            let count = 0
+            for (let i = 0; i < this.cart.length; i++) {
+                if (this.cart[i] = id) {
+                    count++
+                }
+            }
+            return count
         }
     },
     computed: {
         cartItemCount: function() {
             return this.cart.length || ''
         },
-        canAddToCart: function() {
-            return this.product.availableInventory > this.cartItemCount
-        }
     }
 })

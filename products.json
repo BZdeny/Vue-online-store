@@ -4,8 +4,7 @@
         {
             "id": 1,
             "title": "ProPlan Sterilised, 3kg",
-            "description": "А 3 kg bag of <em>irrestible</em>,
-                           organic goodness for your cat.",
+            "description": "А 3 kg bag of <em>irrestible</em>,",
             "price": 2000,
             "image": "img/PP-3kg.jpg",
             "availableInventory": 10,
@@ -14,8 +13,7 @@
         {
             "id": 2,
             "title": "Cat Toy",
-            "description": "Your cat can play with this toy
-                           for a very <strong>long</strong> time",
+            "description": "Your cat can play with this toy",
             "price": 299,
             "image": "img/mouse-toy.jpg",
             "availableInventory": 14,
