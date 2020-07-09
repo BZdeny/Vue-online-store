@@ -3,10 +3,10 @@
     "products":[
         {
             "id": 1,
-            "title": "ProPlan Sterilised, 3kg",
+            "title": "ProPlan Sterilised",
             "description": "А 3 kg bag of <em>irrestible</em>,",
             "price": 2000,
-            "image": "img/PP-3kg.jpg",
+            "image": "assets/images/PP-3kg.jpg",
             "availableInventory": 10,
             "rating": 3
         },
@@ -15,7 +15,7 @@
             "title": "Cat Toy",
             "description": "Your cat can play with this toy",
             "price": 299,
-            "image": "img/mouse-toy.jpg",
+            "image": "assets/images/mouse-toy.jpg",
             "availableInventory": 14,
             "rating": 4
         },
@@ -24,7 +24,7 @@
             "title": "Hammock",
             "description": "CAT SLEEPIN",
             "price": 1300,
-            "image": "img/hammock.jpg",
+            "image": "assets/images/hammock.jpg",
             "availableInventory": 14,
             "rating": 5
         }

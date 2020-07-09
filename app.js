@@ -46,13 +46,13 @@ const webstore = new Vue({
     },
     created: function() {
         axios.get('./products.json')
-        .then ((response) => {
+          .then ((response) => {
             this.products = response.data.products
             console.log(this.products)
         })
     },
     methods: {
-        addToCart: function() {
+        addToCart(aProduct) {
             this.cart.push(aProduct.id)
         },
         showCheckout() {
@@ -70,7 +70,7 @@ const webstore = new Vue({
         cartCount(id) {
             let count = 0
             for (let i = 0; i < this.cart.length; i++) {
-                if (this.cart[i] = id) {
+                if (this.cart[i] === id) {
                     count++
                 }
             }
@@ -81,5 +81,16 @@ const webstore = new Vue({
         cartItemCount: function() {
             return this.cart.length || ''
         },
+        sortedProducts() {
+            if (this.products.length > 0) {
+                let productsArray = this.products.slice(0)
+                function compare(a, b) {
+                    if (a.title.toLowerCase() < b.title.toLowerCase()) return -1
+                    if (a.title.toLowerCase() > b.title.toLowerCase()) return 1
+                    return 0
+                }
+                return productsArray.sort(compare)
+            }
+        }
     }
 })

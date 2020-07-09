@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.16.2/axios.js"> </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.js"> </script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous"> 
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
     <title>Online Store</title>
 </head>
@@ -24,9 +24,9 @@
         <main>
             <div class="row-product">
                 <div v-if ="showProduct">
-                    <div v-for="product in products">
+                    <div v-for="product in sortedProducts">
                     <div class="product">
-                            <figure>
+                            <figure class="image">
                                 <img v-bind:src="product.image">
                             </figure> 
                         <div class="col col-expand">
@@ -51,11 +51,12 @@
                             v-else>Buy Now!
                             </span>
                             <div class="rating">
-                                <span v-bind:class="{'rating-active': checkRating(n, myProduct)}"
+                                <span v-bind:class="{'rating-active': checkRating(n, product)}"
                                       v-for="n in 5">☆</span>
                             </div>
                         </div>
                     </div>
+                    <hr />
                     </div>
                 </div>
                 <div v-else>
@@ -65,13 +66,13 @@
                             <strong>First Name:</strong>
                             <input v-model.trim.lazy="order.firstName"
                             class="form-control"
-                            maxlength="70">
+                            maxlength="45">
                         </div>
                         <div class="lastN">
                             <strong>Last Name:</strong>
                             <input v-model.trim.lazy="order.lastName"
                             class="form-control"
-                            maxlength="70">
+                            maxlength="45">
                         </div>
                         <div class="address">
                             <div class="address">
@@ -79,7 +80,7 @@
                                 <input v-model.trim.lazy="order.address"
                                 class="form-control"
                                 id="address"
-                                maxlength="70">
+                                maxlength="50">
                             </div>
                         </div>
                         <div class="city">
@@ -87,7 +88,7 @@
                             <input v-model.trim.lazy="order.city"
                             class="form-control"
                             id="city"
-                            maxlength="70">
+                            maxlength="45">
                         </div>
                         <div class="state">
                             <strong>State:</strong>
@@ -103,7 +104,7 @@
                             <strong>ZIP / Postal Code:</strong>
                             <input v-model.number.trim.lazy=order.zip
                             class="form-control"
-                            maxlength="70">
+                            maxlength="45">
                         </div>
                         <div class="gift">
                             <input type="checkbox"

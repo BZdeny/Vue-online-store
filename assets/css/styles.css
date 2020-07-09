@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
+    position: relative;
 }
 header {
     background-color: rgb(209, 255, 240);
@@ -19,6 +20,7 @@ header .checkout {
     margin-right: 20px;
     margin-top: 15px;
     background-color: rgb(23, 255, 62);
+    width: 140px;
 }
 p {
     font-size: 22px;
@@ -30,10 +32,14 @@ h2 {
     margin: 10px;
 }
 img {
-    max-height: 300px;
+    max-width: 200px;
+    height: auto;
 }
 .bar-right {
     text-align: right;
+}
+pre {
+    white-space: pre-line;
 }
 button {
     width: 120px;
@@ -41,6 +47,10 @@ button {
     border-radius: 5px;
     border: none;
     font-size: 16px;
+}
+.inventory-message {
+    position: absolute;
+    font-size: 21px;
 }
 .addButton, .addButtonDisabled, .checkout {
     color: #ffffff;
@@ -126,7 +136,7 @@ pre {
     text-align: left;
 }
 .rating {
-    margin-left: 200px;
+    margin-left: 100px;
     font-size: 24px;
     display: inline-block;
     position: relative;
